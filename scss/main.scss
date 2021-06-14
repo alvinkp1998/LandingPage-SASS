@@ -1,0 +1,97 @@
+@import "fonts";
+@import "variables";
+@import "mixins";
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-image: url(../img/bg.png);
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: 60vmax;
+}
+
+//navigation
+.custom-nav {
+  margin-top: -1em;
+  .navbar-brand {
+    img {
+      width: 25px;
+      height: 25px;
+      margin-top: -7px;
+    }
+    span {
+      color: $primaryColor;
+      font-weight: 700;
+      font-size: 1.4em;
+      margin-left: 0.2em;
+    }
+
+    @media screen and (max-width: 992px) {
+      margin-top: -1em;
+    }
+  }
+
+  #navbarNav {
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          color: $primaryColor;
+          font-weight: 500;
+          text-transform: uppercase;
+          margin-left: 2.4em;
+          transition: 0.3s color ease;
+
+          &:hover {
+            color: darken($primaryColor, 20%);
+          }
+        }
+        .sign-up-button {
+          @include tombol();
+        }
+      }
+    }
+  }
+}
+
+// Content
+.custom-content {
+  margin-top: 10em;
+  h2 {
+    font-weight: 700;
+    font-size: 4rem;
+    color: $primaryColor;
+    white-space: nowrap; //untuk tetap satu baris bila turun
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-weight: 400;
+    font-size: 3rem;
+    line-height: 1;
+    color: $seconadaryColor;
+  }
+
+  p {
+    color: $textColor;
+    font-size: 1.1rem;
+    margin-top: 2em;
+  }
+
+  a {
+    margin-top: 2.2em;
+    @include tombol();
+    border: 1px solid transparent; //agar tidak turun
+    transition: 0.5s ease;
+
+    &:hover {
+      color: $primaryColor;
+      border: 1px solid $primaryColor;
+      background-color: transparent;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    margin-top: 0;
+    text-align: center;
+  }
+}
